@@ -312,7 +312,12 @@ didDisconnectWithUser:(GIDGoogleUser *)user
     if([messageData objectForKey:@"notification_ios_badge"] != nil){
         badge = [messageData objectForKey:@"notification_ios_badge"];
     }
-   
+	//Extract id_notification from data notification keys
+    NSString* idNotification = nil;
+    if([messageData objectForKey:@"id_notification"] != nil){
+        idNotification = [messageData objectForKey:@"id_notification"];
+    }
+
     if(title == nil || body == nil){
         return;
     }
@@ -352,7 +357,8 @@ didDisconnectWithUser:(GIDGoogleUser *)user
                 NSDictionary* userInfo = [[NSDictionary alloc] initWithObjectsAndKeys:
                                           @"true", @"notification_foreground",
                                           messageType, @"messageType",
-                                          aps, @"aps"
+                                          aps, @"aps",
+										  idNotification, @"id_notification"
                                           , nil];
                 
                 objNotificationContent.userInfo = userInfo;
