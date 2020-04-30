@@ -1,16 +1,18 @@
-# Version 9.1.1
+# Version 9.1.1-cli
 * (iOS): Bump Firebase SDK components to v6.23.0.
     * Relates to [#373](https://github.com/dpa99c/cordova-plugin-firebasex/issues/373).
     * See https://firebase.google.com/support/release-notes/ios#version_6230_-_april_21_2020.
 * (Android) Bump Firebase SDK (and other Gradle dependencies) to latest versions.
     * See https://firebase.google.com/support/release-notes/android#2020-04-23
-
-# Version 9.1.0
+    
+# Version 9.1.0-cli
 * (Android & iOS) *BREAKING CHANGE*: Add support for filters to `fetchDocumentInFirestoreCollection()`
     * *BREAKING CHANGE* to function signature.
     * Merged from PR [#367](https://github.com/dpa99c/cordova-plugin-firebasex/pull/367).
+* (Android) Fix regression bug which causes CLI builds to fail on Android. 
+Resolves [#369](https://github.com/dpa99c/cordova-plugin-firebasex/issues/369).  
 
-# Version 9.0.3
+# Version 9.0.3-cli
 * (Android & iOS) Add `reloadCurrentUser()`
 * (Doc) `createChannel()` suggestion for multiple sounds
     * Merged from PR [#225](https://github.com/dpa99c/cordova-plugin-firebasex/pull/225).
@@ -18,15 +20,17 @@
     * Merged from PR [#363](https://github.com/dpa99c/cordova-plugin-firebasex/pull/363).
 * (Android & iOS) Add `signInUserWithCustomToken()` AND `signInUserAnonymously()` auth methods
     * Merged from PR [#359](https://github.com/dpa99c/cordova-plugin-firebasex/pull/359).
+    
+# Version 9.0.2-cli
 
-# Version 9.0.2
 * (Android): Don't display app icon for large notification icon on Android. Resolves [#343](https://github.com/dpa99c/cordova-plugin-firebasex/issues/343).
 * (Android & iOS) Sign out of Google signing out of Firebase. Resolves [#353](https://github.com/dpa99c/cordova-plugin-firebasex/issues/353).
 * (Android & iOS) Add `documentExistsInFirestoreCollection()` and fix resolution of `fetchDocumentInFirestoreCollection()`.
 
-# Version 9.0.1
-* Re-add Firebase Inapp Messaging SDK component to master branch. 
-* Document `cli_build` branch. See [#326](https://github.com/dpa99c/cordova-plugin-firebasex/issues/326).
+# Version 9.0.1-cli
+* Document `cli_build` branch.
+* *BREAKING CHANGE*: Remove Firebase Inapp Messaging and Google Tag Manager SDK components due to causing Cordova CLI build issues.
+    * Resolves [#326](https://github.com/dpa99c/cordova-plugin-firebasex/issues/326).
 
 # Version 9.0.0
 * *BREAKING CHANGE*: Change method signature of `setCrashlyticsCollectionEnabled()` to `(enabled, success, error)` (from `()`) to allow enabling/disabling of Crashlytics at runtime and align it with `setPerformanceCollectionEnabled()` and `setAnalyticsCollectionEnabled()`
